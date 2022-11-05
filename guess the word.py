@@ -7,26 +7,24 @@ while True:
     len_word = len(word)
     hash_ = '_'
     hash_ *= len_word
-    print('your chance',len_word // 2)
+    print('your chance', len_word // 2)
     print(hash_)
-    
+
     chance = len_word // 2
     while True:
-        
+
         litter = input('inter a litter: ')
-        
-        
+
         chance -= 1
         for j in word:
             if litter in j:
-                index = [i for i,x in enumerate(word) if x == litter]
+                index = [i for i, x in enumerate(word) if x == litter]
                 for y in index:
-                    hash_ = hash_[:y] + litter + hash_[y+1:]
-                
+                    hash_ = hash_[:y] + litter + hash_[y + 1:]
+
         if litter not in word:
-            
-            print('no')  
-        print('your chance',chance)     
+            print('no')
+        print('your chance', chance)
         print(hash_)
         if chance == 0:
             print('end your chance')
@@ -36,11 +34,11 @@ while True:
             break
     max_count = 3
     while True:
-        
+
         guesses_word = input("inter you guesses word: ")
         max_count -= 1
         if guesses_word != word:
-            print('your chance',max_count)
+            print('your chance', max_count)
         if guesses_word == word:
             print("you won")
             break
@@ -52,7 +50,3 @@ while True:
     if answer == "n":
         print('good bye')
         break
-
-
-
-
